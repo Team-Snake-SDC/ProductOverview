@@ -110,6 +110,6 @@ CSV HEADER;
 CREATE INDEX product_index ON product (id);
 CREATE INDEX features_index ON features (product_id);
 CREATE INDEX related_index ON related (current_product_id);
-CREATE INDEX styles_index ON styles (id);
+CREATE INDEX styles_index ON styles (productId);
 CREATE INDEX skus_index ON skus (styleId);
 CREATE INDEX photos_index ON photos (styleId);
