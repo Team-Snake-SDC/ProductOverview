@@ -103,9 +103,9 @@ const getProductStyles = (req, res) => {
 
 const getRelatedItems = (req, res) => {
 let id = req.params.product_id || 1;
-let query = `SELECT * FROM related WHERE current_product_id = ${id}`;
+let query = `SELECT array_agg(related_product_id) FROM related WHERE current_product_id = ${id}`;
 pool.query(query).then((data)=>  {
-  res.send(data.rows);
+  res.send(data.rows[0].array_agg);
 }).catch(err=> {
   console.log('error in getRelatedItems', err);
   res.status(500).send(err);
