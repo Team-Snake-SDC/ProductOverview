@@ -6,3 +6,4 @@ skus.csv
 styles.csv
 node_modules/
 .env
+schema.sql
