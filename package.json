@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "server": "nodemon server/index.js"
+    "server": "nodemon server/index.js",
+    "test": "k6 run testing/k6testing.js"
   },
   "dependencies": {
     "csv-parse": "^5.3.1",
